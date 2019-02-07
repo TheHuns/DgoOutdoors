@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SWCO Outdoor | Home</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <div id="header-text">
+        <h1><a href="#">SWCO Outdoor Info</a></h1>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="forum.html">Forums</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="intro">
+      <div class="intro-box">
+        <h3>All you need to know for any type of day outside.</h3>
+        <br />
+        <p>
+          When you're not sure whether to bust out the bike, kayak, skis, or
+          trad rack...come here First!<br> Trying to make it convient for anyone in
+          the Four Corners area to get all the information about their
+          environment in one spot.<br> If you have any suggestions for content hit
+          the Contact page!
+        </p>
+      </div>
+    </section>
+    <div class="container">
+      <section id="weather">
+        <div class="container boxes">
+          <h2>Local Weather</h2>
+          <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button" onclick="openCity('durango')">
+              Durango
+            </button>
+            <button
+              class="w3-bar-item w3-button"
+              onclick="openCity('wolfcreek')"
+            >
+              Wolf Creek
+            </button>
+            <button class="w3-bar-item w3-button" onclick="openCity('moab')">
+              Moab
+            </button>
+          </div>
+
+          <div class="city" id="durango">
+            <iframe
+              width="90%"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+              src="https://forecast.weather.gov/MapClick.php?lat=37.27057200000007&lon=-107.87739649999997#.W_bu_uhKg2w"
+            ></iframe>
+          </div>
+          <div class="city" id="wolfcreek" style="display:none">
+            <iframe
+              src="https://forecast.weather.gov/MapClick.php?lon=-106.79466247558595&lat=37.478127628721225#.XAGd0GhKiUk"
+              width="90%"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+            ></iframe>
+          </div>
+          <div class="city" id="moab" style="display:none">
+            <iframe
+              src="https://forecast.weather.gov/MapClick.php?lat=38.5733&lon=-109.5497#.XAGfZGhKiUk"
+              width="90%"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="snow">
+        <div class="container boxes">
+          <h2>Snow Conditions</h2>
+          <iframe
+            src="https://www.purgatoryresort.com/snow-report/"
+            width="90%"
+            height="500"
+            scrolling="yes"
+            frameborder="0"
+          ></iframe>
+          <h3>Avalanche Conditions</h3>
+          <iframe
+            src="https://avalanche.state.co.us/"
+            width="90%"
+            height="500"
+            scrolling="yes"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="river">
+        <div class="container boxes">
+          <h2>River Flows</h2>
+          <iframe
+            src="https://waterdata.usgs.gov/co/nwis/uv?site_no=09361500"
+            width="90%"
+            height="500"
+            scrolling="yes"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+      }
+    </script>
+  </body>
+</html>
