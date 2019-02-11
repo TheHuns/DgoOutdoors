@@ -68,6 +68,25 @@ header {
     text-align: center;
   }
 }
+/* Menu for Sections */
+.responsive-area{
+  display: flex;
+}
+.global-menu{
+  width: 15%;
+}
+.global-menu ul{
+  margin-top: 2rem;
+}
+.global-menu li{
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+.global-menu li:hover{
+  cursor: pointer;
+  
+}
+
 
 /* Sections */
 #intro {

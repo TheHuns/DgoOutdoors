@@ -21,9 +21,9 @@
 
     <section id="intro">
       <div class="intro-box">
-        <h3>All you need to know for any type of day outside.</h3>
+        <h3 id="info-header"  >All you need to know for any type of day outside.</h3>
         <br />
-        <p>
+        <p id="info-text" >
           When you're not sure whether to bust out the bike, kayak, skis, or
           trad rack...come here First!<br> Trying to make it convient for anyone in
           the Four Corners area to get all the information about their
@@ -32,8 +32,16 @@
         </p>
       </div>
     </section>
-    <div class="container">
-      <section id="weather">
+    <div class="responsive-area">
+      <div class="global-menu">
+        <ul>
+          <li>Local Weather</li>
+          <li>Snow Conditions</li>
+          <li>River Flows</li>
+        </ul>
+      </div>
+      <div class="container">
+      <section id="weather global">
         <div class="container boxes">
           <h2>Local Weather</h2>
           <div class="w3-bar w3-black">
@@ -81,7 +89,7 @@
         </div>
       </section>
 
-      <section id="snow">
+      <section id="snow global">
         <div class="container boxes">
           <h2>Snow Conditions</h2>
           <iframe
@@ -102,7 +110,7 @@
         </div>
       </section>
 
-      <section id="river">
+      <section id="river global">
         <div class="container boxes">
           <h2>River Flows</h2>
           <iframe
@@ -115,16 +123,12 @@
         </div>
       </section>
     </div>
+  </div>
 
-    <script>
-      function openCity(cityName) {
-        var i;
-        var x = document.getElementsByClassName("city");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(cityName).style.display = "block";
-      }
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <script src="./js/main.js"></script>
     </script>
-  </body>
+  </body> 
 </html>
