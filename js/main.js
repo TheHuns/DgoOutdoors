@@ -21,10 +21,13 @@ function openCity(cityName) {
 
 //controls for global tabs
 const li = document.querySelectorAll(".global-menu li");
-const global = document.querySelectorAll("#global");
+const global = document.querySelectorAll(".global");
 
 function globalMenu(event) {
-  global.style.display = none;
+  for (let sections of global) {
+    sections.style.display = "none";
+  }
+
   if (event.target.innerText == "Local Weather") {
     document.querySelector("#weather").style.display = "block";
   } else if (event.target.innerText == "Snow Conditions") {
@@ -33,5 +36,6 @@ function globalMenu(event) {
     document.querySelector("#river").style.display = "block";
   }
 }
-
-li.addEventListener("click", globalMenu);
+for (let link of li) {
+  link.addEventListener("click", globalMenu);
+}
