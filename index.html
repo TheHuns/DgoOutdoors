@@ -4,6 +4,17 @@
     <title>SWCO Outdoor | Home</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://txpub.usgs.gov/DSS/GWIS/0.0/jsapi/gwis-plot-utils.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://txpub.usgs.gov/DSS/GWIS/0.0/jsapi/gwis-plot-utils.min.js"></script>
   </head>
   <body>
     <header>
@@ -21,110 +32,198 @@
 
     <section id="intro">
       <div class="intro-box">
-        <h3>All you need to know for any type of day outside.</h3>
+        <h3 id="info-header">
+          All you need to know for any type of day outside.
+        </h3>
         <br />
-        <p>
+        <p id="info-text">
           When you're not sure whether to bust out the bike, kayak, skis, or
-          trad rack...come here First!<br> Trying to make it convient for anyone in
-          the Four Corners area to get all the information about their
-          environment in one spot.<br> If you have any suggestions for content hit
-          the Contact page!
+          trad rack...come here First!<br />
+          Trying to make it convient for anyone in the Four Corners area to get
+          all the information about their environment in one spot.<br />
+          If you have any suggestions for content hit the Contact page!
         </p>
       </div>
+      <a href="#weather"><button>Get Started!</button></a>
     </section>
-    <div class="container">
-      <section id="weather">
-        <div class="container boxes">
-          <h2>Local Weather</h2>
-          <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" onclick="openCity('durango')">
-              Durango
-            </button>
-            <button
-              class="w3-bar-item w3-button"
-              onclick="openCity('wolfcreek')"
-            >
-              Wolf Creek
-            </button>
-            <button class="w3-bar-item w3-button" onclick="openCity('moab')">
-              Moab
-            </button>
-          </div>
+    <div class="responsive-area">
+      <div class="global-menu">
+        <ul>
+          <li>Local Weather</li>
+          <li>Snow Conditions</li>
+          <li>River Flows</li>
+        </ul>
+      </div>
+      <div class="container">
+        <section id="weather" class="global">
+          <div class="container boxes">
+            <h2>Local Weather</h2>
+            <div class="w3-bar w3-black">
+              <button
+                class="w3-bar-item w3-button"
+                onclick="openCity('durango')"
+              >
+                Durango
+              </button>
+              <button
+                class="w3-bar-item w3-button"
+                onclick="openCity('wolfcreek')"
+              >
+                Wolf Creek
+              </button>
+              <button class="w3-bar-item w3-button" onclick="openCity('moab')">
+                Moab
+              </button>
+            </div>
 
-          <div class="city" id="durango">
+            <div class="city" id="durango">
+              <iframe
+                width="90%"
+                height="500"
+                scrolling="yes"
+                frameborder="0"
+                src="https://forecast.weather.gov/MapClick.php?lat=37.27057200000007&lon=-107.87739649999997#.W_bu_uhKg2w"
+              ></iframe>
+            </div>
+            <div class="city" id="wolfcreek" style="display:none">
+              <iframe
+                src="https://forecast.weather.gov/MapClick.php?lon=-106.79466247558595&lat=37.478127628721225#.XAGd0GhKiUk"
+                width="90%"
+                height="500"
+                scrolling="yes"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="city" id="moab" style="display:none">
+              <iframe
+                src="https://forecast.weather.gov/MapClick.php?lat=38.5733&lon=-109.5497#.XAGfZGhKiUk"
+                width="90%"
+                height="500"
+                scrolling="yes"
+                frameborder="0"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section id="snow" class="global">
+          <div class="container boxes">
+            <h2>Snow Conditions</h2>
             <iframe
+              src="https://www.purgatoryresort.com/snow-report/"
               width="90%"
               height="500"
               scrolling="yes"
               frameborder="0"
-              src="https://forecast.weather.gov/MapClick.php?lat=37.27057200000007&lon=-107.87739649999997#.W_bu_uhKg2w"
             ></iframe>
-          </div>
-          <div class="city" id="wolfcreek" style="display:none">
+            <h3>Avalanche Conditions</h3>
             <iframe
-              src="https://forecast.weather.gov/MapClick.php?lon=-106.79466247558595&lat=37.478127628721225#.XAGd0GhKiUk"
+              src="https://avalanche.state.co.us/"
               width="90%"
               height="500"
               scrolling="yes"
               frameborder="0"
             ></iframe>
           </div>
-          <div class="city" id="moab" style="display:none">
-            <iframe
-              src="https://forecast.weather.gov/MapClick.php?lat=38.5733&lon=-109.5497#.XAGfZGhKiUk"
-              width="90%"
-              height="500"
-              scrolling="yes"
-              frameborder="0"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="snow">
-        <div class="container boxes">
-          <h2>Snow Conditions</h2>
-          <iframe
-            src="https://www.purgatoryresort.com/snow-report/"
-            width="90%"
-            height="500"
-            scrolling="yes"
-            frameborder="0"
-          ></iframe>
-          <h3>Avalanche Conditions</h3>
-          <iframe
-            src="https://avalanche.state.co.us/"
-            width="90%"
-            height="500"
-            scrolling="yes"
-            frameborder="0"
-          ></iframe>
-        </div>
-      </section>
-
-      <section id="river">
-        <div class="container boxes">
-          <h2>River Flows</h2>
-          <iframe
+        <section id="river" class="global">
+          <div class="container boxes">
+            <h2>River Flows</h2>
+            <div class="river-buttons">
+              <button>Animas-Durango</button>
+              <button>Animas-Silverton</button>
+              <button>Piedra</button>
+              <button>San-Juan</button>
+            </div>
+            <!-- <iframe
             src="https://waterdata.usgs.gov/co/nwis/uv?site_no=09361500"
             width="90%"
             height="500"
             scrolling="yes"
             frameborder="0"
           ></iframe>
-        </div>
-      </section>
+          <br> -->
+            <div class="rivers" id="Animas-Durango">
+              <div id="plot1" style="width:95%; height:500px;"></div>
+              <script>
+                GWIS.plot({
+                  div_id: "plot1",
+                  series: [{ site: "09361500", pcode: "00060" }],
+                  title: "Animas River at Durango",
+                  xlabel: "Date/Time",
+                  ylabel: "Flow in CFS",
+                  legend: "onmouseover"
+                });
+              </script>
+            </div>
+            <div class="rivers" id="Animas-Silverton">
+              <div id="plot2" style="width:95%; height:500px;"></div>
+              <script>
+                GWIS.plot({
+                  div_id: "plot2",
+                  series: [{ site: "09359020", pcode: "00060" }],
+                  title: "Animas River at Silverton",
+                  xlabel: "Date/Time",
+                  ylabel: "Flow in CFS",
+                  legend: "onmouseover"
+                });
+              </script>
+            </div>
+            <div class="rivers" id="Piedra">
+              <div id="plot1" style="width:95%; height:500px;"></div>
+              <script>
+                GWIS.plot({
+                  div_id: "plot1",
+                  series: [{ site: "09349800", pcode: "00060" }],
+                  title: "Piedra River at Arboles",
+                  xlabel: "Date/Time",
+                  ylabel: "Flow in CFS",
+                  legend: "onmouseover"
+                });
+              </script>
+            </div>
+            <div class="rivers" id="SanJuan">
+              <div id="plot1" style="width:95%; height:500px;"></div>
+              <script>
+                GWIS.plot({
+                  div_id: "plot1",
+                  series: [{ site: "09342500", pcode: "00060" }],
+                  title: "San Juan River in Pagosa Springs",
+                  xlabel: "Date/Time",
+                  ylabel: "Flow in CFS",
+                  legend: "onmouseover"
+                });
+              </script>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <script>
-      function openCity(cityName) {
-        var i;
-        var x = document.getElementsByClassName("city");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(cityName).style.display = "block";
-      }
-    </script>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <ul>
+            <li><a href="#">Forums</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-mid">
+          <h3>|<span id="space"> Copyright &copy 2019, HunsWebInc </span>|</h3>
+        </div>
+        <div class="footer-right">
+          <ul>
+            <li><a href="#">Suggestion Box</a></li>
+            <li><a href="#">Request site for your area</a></li>
+            <li><a href="#">Hire me to create YOUR site</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/river.js"></script>
   </body>
 </html>
