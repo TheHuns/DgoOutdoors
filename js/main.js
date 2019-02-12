@@ -25,6 +25,7 @@ const global = document.querySelectorAll(".global");
 //set inital state
 $("#snow").hide();
 $("#river").hide();
+$("#avalanche").hide();
 
 function globalMenu(event) {
   event.preventDefault();
@@ -41,6 +42,8 @@ function globalMenu(event) {
     document.querySelector("#snow").style.display = "block";
   } else if (event.target.innerText == "River Flows") {
     document.querySelector("#river").style.display = "block";
+  } else if (event.target.innerText == "Avalanche Conditions") {
+    document.querySelector("#avalanche").style.display = "block";
   }
   return false;
 }
