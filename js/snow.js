@@ -2,7 +2,7 @@
 const https = require("https");
 
 //print response function(to go in response.end part of the call)
-function printResults(streamInfo) {
+function printResults(info) {
   // create html element and populate
 }
 
@@ -24,6 +24,7 @@ function getFlows(location) {
           response.on("end", () => {
             let streamInfo = JSON.parse(body);
             console.dir(streamInfo[2]);
+            // printResults(streamInfo);
           });
         } else {
           console.log(response.statusCode);
