@@ -43,20 +43,23 @@
 const rivers = document.querySelectorAll(".rivers");
 const riverBtns = document.querySelectorAll(".river-buttons button");
 
+//Set animas as initial view
 for (let river of rivers) {
-  river.style.display = "none";
+   river.style.display = "none";
 }
 document.getElementById("Animas-Durango").style.display = "block";
 
+//add event listener to all buttons
 for (let button of riverBtns) {
-  button.addEventListener("click", riverSelect);
+   button.addEventListener("click", riverSelect);
 }
 
+//callback function to execute on click/ display correct graph for river chosen
 function riverSelect(event) {
-  event.preventDefault();
-  for (let river of rivers) {
-    river.style.display = "none";
-  }
-  document.getElementById(event.target.textContent).style.display = "block";
-  return false;
+   event.preventDefault();
+   for (let river of rivers) {
+      river.style.display = "none";
+   }
+   document.getElementById(event.target.textContent).style.display = "block";
+   return false;
 }
